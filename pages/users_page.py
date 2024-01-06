@@ -1,13 +1,7 @@
-import base64
-import os
-import random
 import time
 
-from selenium.webdriver.common.by import By
-from selenium.webdriver import Keys
-
 from generator.generator import generated_person
-from locators.user_page_locators import FillAddDriverPageLocators
+from locators.users_page_locators import FillAddDriverPageLocators
 from pages.base_page import BasePage
 
 
@@ -61,7 +55,6 @@ class AddUserPage(BasePage):
 
         self.element_is_visible(self.locators.PASSWORD).send_keys(person.password)
         self.element_is_visible(self.locators.CONFIRM_PASSWORD).send_keys(person.password)
-        time.sleep(30)
         self.element_is_visible(self.locators.SAVE_BUTTON).click()
         return person.username
 

@@ -1,12 +1,12 @@
 import random
 import time
 
-from pages.user_page import AddUserPage
+from pages.users_page import AddUserPage
 from conftest import driver
 
-class Test_User_Tab:
+class TestUsersTab:
 
-    class Test_Create_User:
+    class TestCreateUser:
 
         def test_add_new_driver(self,driver):
             add_user = AddUserPage(driver, "https://test9.isi-technology.com/#!/users")
