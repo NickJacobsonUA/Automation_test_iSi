@@ -9,6 +9,7 @@ class AddVehiclePage(BasePage):
 
     def fill_add_am_vehicle_form(self):
         vehicle = next(generated_data())  # generator data
+        vehicle_id = vehicle.id_number
         # ADD VEHICLE MAIN INFO
         self.element_is_present(self.locators.ADD_VEHICLE_BUTTON).click()
         self.element_is_present(self.locators.KIND_SELECT).click()
@@ -27,7 +28,7 @@ class AddVehiclePage(BasePage):
         self.element_is_visible(self.locators.INFO_TAB).click()
 
         # BACK TO INFO TAB
-        self.element_is_present(self.locators.VEHICLE_ID).send_keys(vehicle.id_number)
+        self.element_is_present(self.locators.VEHICLE_ID).send_keys(vehicle_id)
         self.element_is_visible(self.locators.MAKE).send_keys(vehicle.universal)
         self.element_is_visible(self.locators.MODEL).send_keys(vehicle.universal)
         self.element_is_visible(self.locators.MAKE).send_keys(vehicle.universal)
@@ -44,7 +45,7 @@ class AddVehiclePage(BasePage):
         self.element_is_visible(self.locators.PURCHASE_DATE_SEARCH_LEFT).click()
         self.element_is_present(self.locators.PURCHASE_DATE_DAY_SELECT).click()
         self.element_is_visible(self.locators.SAVE_BUTTON).click()
-        return vehicle.id_number
+        return vehicle_id
 
     def check_add_vehicle(self):
         result = self.element_is_present(self.locators.RESULT).text
