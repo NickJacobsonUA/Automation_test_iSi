@@ -3,7 +3,6 @@ from conftest import driver
 from pages.login_page import LoginPage
 
 
-
 class TestAddPassenger:
 
     def test_add_new_passenger(self, driver):
