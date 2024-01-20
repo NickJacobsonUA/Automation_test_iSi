@@ -1,6 +1,4 @@
-import time
-
-from generator.generator import generated_person
+from generator.generator import generated_data
 from locators.users_page_locators import FillAddDriverPageLocators
 from pages.base_page import BasePage
 
@@ -10,7 +8,8 @@ class AddUserPage(BasePage):
     locators = FillAddDriverPageLocators
 
     def fill_add_simple_driver_form(self):
-        person = next(generated_person()) # generator data
+        # generating data
+        person = next(generated_data())
         self.element_is_visible(self.locators.ADD_USER_BUTTON).click()
         self.element_is_visible(self.locators.FIRST_NAME).send_keys(person.firstname)
         self.element_is_visible(self.locators.LAST_NAME).send_keys(person.lastname)
@@ -20,7 +19,6 @@ class AddUserPage(BasePage):
         self.element_is_present(self.locators.DRIVER_TYPE_INPUT).click()
         self.element_is_visible(self.locators.ADDRESS1).send_keys(person.address_buffalo)
         self.element_is_present(self.locators.ADDRESS1_SELECT).click()
-
         self.element_is_visible(self.locators.BIRTHDAY_INPUT).click()
         self.element_is_visible(self.locators.BIRTHDAY_YEAR_SEARCH).click()
         self.element_is_visible(self.locators.BIRTHDAY_YEAR_SEARCH).click()
