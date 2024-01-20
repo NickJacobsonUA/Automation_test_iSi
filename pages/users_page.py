@@ -10,6 +10,7 @@ class AddUserPage(BasePage):
     def fill_add_simple_driver_form(self):
         # generating data
         person = next(generated_data())
+        username = person.username
         self.element_is_visible(self.locators.ADD_USER_BUTTON).click()
         self.element_is_visible(self.locators.FIRST_NAME).send_keys(person.firstname)
         self.element_is_visible(self.locators.LAST_NAME).send_keys(person.lastname)
@@ -49,12 +50,12 @@ class AddUserPage(BasePage):
         self.element_is_visible(self.locators.CAN_SEE_AVAILABLE_TRIPS_OPTION).click()
 
         self.element_is_visible(self.locators.EMAIL).send_keys(person.email)
-        self.element_is_visible(self.locators.USER_NAME).send_keys(person.username)
+        self.element_is_visible(self.locators.USER_NAME).send_keys(username)
 
         self.element_is_visible(self.locators.PASSWORD).send_keys(person.password)
         self.element_is_visible(self.locators.CONFIRM_PASSWORD).send_keys(person.password)
         self.element_is_visible(self.locators.SAVE_BUTTON).click()
-        return person.username
+        return username
 
     def check_add_driver(self):
         result = self.element_is_present(self.locators.RESULT).text
