@@ -8,7 +8,7 @@ class Gen_Data:
     lastname: str = None
     username: str = None
     age: int = None
-    id_number: int = None
+    id_number: str = None
     department: str = None
     email: str = None
     address: str = None
