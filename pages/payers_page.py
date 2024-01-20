@@ -12,9 +12,10 @@ class AddPayerPage(BasePage):
 
     def fill_add_payer_form(self):
         data = next(generated_data())  # generating data
+        id_number = data.id_number
         self.element_is_visible(self.locators.ADD_PAYER_BUTTON).click()
 
-        self.element_is_visible(self.locators.PAYER_ID).send_keys(data.id_number)
+        self.element_is_visible(self.locators.PAYER_ID).send_keys(id_number)
         self.element_is_visible(self.locators.PAYER_NAME).send_keys(data.company)
 
         # pricing_tab = self.element_is_visible(self.locators.PRICING_TAB)
@@ -41,8 +42,7 @@ class AddPayerPage(BasePage):
         self.element_is_visible(self.locators.WHEELCHAIR_TOGGLE).click()
         self.element_is_visible(self.locators.STRETCHER_TOGGLE).click()
         self.element_is_visible(self.locators.SAVE_BUTTON).click()
-        time.sleep(30)
-        return data.id_number
+        return id_number
 
     def check_add_payer(self):
         result = self.element_is_present(self.locators.RESULT).text

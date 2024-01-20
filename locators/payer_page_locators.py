@@ -1,5 +1,3 @@
-import time
-
 from selenium.webdriver.common.by import By
 
 
@@ -25,13 +23,10 @@ class AddPayerPageLocators:
     PRIVATE_PAY_TOGGLE = (By.XPATH, '//ng-form/fieldset/div/div/div[15]/div/div/div[4]/div[2]/label/span/i')
     CREDIT_CARD_TOGGLE = (By.XPATH, '//ng-form/fieldset/div/div/div[15]/div/div/div[5]/div/div[1]/label/span/i')
     CASH_TOGGLE = (By.XPATH, '//ng-form/fieldset/div/div/div[15]/div/div/div[5]/div/div[2]/label/span/i')
-    #CHECK_TOGGLE = (By.XPATH, '//div[13]/div/div/div[5]/div/div[3]/label/span/i')
-    #TAXI_TOGGLE = (By.XPATH, '//div[13]/div/div/div[6]/div/div[1]/label/span/i')
     AMBULATORY_TOGGLE = (By.XPATH, '//ng-form/fieldset/div/div/div[15]/div/div/div[6]/div/div[2]/label/span/i')
     WHEELCHAIR_TOGGLE = (By.XPATH, '//ng-form/fieldset/div/div/div[15]/div/div/div[6]/div/div[3]/label/span/i')
     STRETCHER_TOGGLE = (By.XPATH, '//ng-form/fieldset/div/div/div[15]/div/div/div[6]/div/div[4]/label/span/i')
     SAVE_BUTTON = (By.XPATH, '/html/body/div/div[2]/div[2]/div/div/div[2]/div[2]/div/button[3]')
-
 
     #Result after adding a payer
     RESULT = (By.CSS_SELECTOR, 'div[class="ui-notification ng-scope info clickable"]')
