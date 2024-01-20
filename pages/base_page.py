@@ -1,10 +1,9 @@
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
 
 
-class BasePage:  # base page использует driver, и будет представлять собой класс от которого будут следоваться все остальные страницы
+class BasePage:
     def __init__(self, driver, url):
         self.driver = driver
         self.url = url
@@ -14,7 +13,6 @@ class BasePage:  # base page использует driver, и будет пред
     def open(self):
         self.driver.get(self.url)
 
-    # Создание методов для поиска єлементов на странице
     def element_is_visible(self, locator, timeout=5):
         return wait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
 
@@ -56,7 +54,17 @@ class BasePage:  # base page использует driver, и будет пред
         action.move_to_element(element)
         action.perform()
 
-
-
-
-
+    # def click_obj(self, click_elem: str, message: str = 'TimeoutException'):
+    #     """Клик по видимому обьекту страницы
+    #
+    #     click_elem = str / например:  ('xpath', click_elem)
+    #
+    #     """
+    #     try:
+    #         my_obj = self.wite.until(EC.visibility_of_element_located(click_elem))
+    #
+    #         ActionChains(self.driver).click(my_obj).perform()
+    #
+    #
+    #     except TimeoutException:
+    #         self.error_info(message)
