@@ -10,3 +10,14 @@ class AddDriverGroupPageLocators:
     SAVE_BUTTON = (By.CSS_SELECTOR, 'button[class="btn btn-lg mr5 ml5 btn-success ng-scope"]')
 
     RESULT = (By.CSS_SELECTOR, 'div[class="ui-notification ng-scope info clickable"]')
+
+
+class DriverGroupListPageLocators:
+    SEARCH = (By.CSS_SELECTOR, 'input[name="searchGroup"]')
+    DRIVER_GROUP_ACTIVE = (By.CSS_SELECTOR, 'td[title="Active"]')
+    DRIVER_GROUP_INACTIVE = (By.CSS_SELECTOR, 'td[title="Inactive"]')
+    DEACTIVATE_BUTTON = (By.CSS_SELECTOR, 'button[class="btn btn-lg mr5 ml5 btn-danger ng-scope"]')
+    ACTIVATE_BUTTON = (By.CSS_SELECTOR, 'button[class="btn btn-lg mr5 ml5 btn-success ng-scope"]')
+    CONFIRM = (By.CSS_SELECTOR, 'button[class="confirm"]')
+    INACTIVE_STATUS = (By.CSS_SELECTOR, 'span[ng-hide="group.is_active"]')
+    ACTIVE_STATUS = (By.CSS_SELECTOR, 'span[ng-show="group.is_active"]')
