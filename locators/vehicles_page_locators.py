@@ -3,7 +3,7 @@ import time
 from selenium.webdriver.common.by import By
 
 
-class FillAddVehiclePageFormLocators:
+class AddVehiclePageFormLocators:
     ADD_VEHICLE_BUTTON = (By.CSS_SELECTOR, 'div[class="col-md-2 col-sm-2 pull-right btn btn-primary wrapper-add_vehicle col-md-3"]')
     KIND_SELECT = (By.CSS_SELECTOR, 'select[name="kind"]')
     KIND_OPTION =(By.CSS_SELECTOR, 'select[name="kind"] option[label="Office"]')

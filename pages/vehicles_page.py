@@ -1,11 +1,11 @@
 from generator.generator import generated_data
-from locators.vehicles_page_locators import FillAddVehiclePageFormLocators
+from locators.vehicles_page_locators import AddVehiclePageFormLocators
 from pages.base_page import BasePage
 
 
 class AddVehiclePage(BasePage):
 
-    locators = FillAddVehiclePageFormLocators
+    locators = AddVehiclePageFormLocators
 
     def fill_add_am_vehicle_form(self):
         vehicle = next(generated_data())  # generator data
