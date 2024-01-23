@@ -7,6 +7,8 @@ class Gen_Data:
     firstname: str = None
     lastname: str = None
     username: str = None
+    default_passenger: str = None
+    group_owner: str = None
     age: int = None
     id_number: str = None
     department: str = None
