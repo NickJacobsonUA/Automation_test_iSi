@@ -1,11 +1,11 @@
 from generator.generator import generated_data
-from locators.users_page_locators import FillAddDriverPageLocators
+from locators.users_page_locators import AddDriverPageLocators
 from pages.base_page import BasePage
 
 
 class AddUserPage(BasePage):
 
-    locators = FillAddDriverPageLocators
+    locators = AddDriverPageLocators
 
     def fill_add_simple_driver_form(self):
         # generating data

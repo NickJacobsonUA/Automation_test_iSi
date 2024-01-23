@@ -1,15 +1,16 @@
 from pages.users_page import AddUserPage
 from conftest import driver
 from pages.login_page import LoginPage
+from creds_and_links import Links
 
 
 class TestUsers:
 
     def test_add_new_driver(self, driver):
-        login = LoginPage(driver, "https://test9.isi-technology.com/#!/login")
+        login = LoginPage(driver, Links.login)
         login.open()
         login.fill_login_form()
-        add_user = AddUserPage(driver, "https://test9.isi-technology.com/#!/users")
+        add_user = AddUserPage(driver, Links.users)
         add_user.open()
         user = add_user.fill_add_simple_driver_form()
         print(user)

@@ -3,7 +3,8 @@ import time
 
 from selenium.webdriver.common.by import By
 
-class FillAddDriverPageLocators:
+
+class AddDriverPageLocators:
     ADD_USER_BUTTON = (By.CSS_SELECTOR, 'div[class="pull-right btn btn-primary"]')
     FIRST_NAME = (By.CSS_SELECTOR,'input[name="first_name"]')
     LAST_NAME = (By.CSS_SELECTOR,'input[name="last_name"]')
