@@ -1,13 +1,18 @@
 from pages.driver_group_page import AddDriverGroupPage, DriverGroupListPage
 from conftest import driver
 from pages.login_page import LoginPage
-from creds_and_links import Links
+from links import Links
+import allure
+import pytest
 
 
+@allure.feature("Add Driver Group")
 class TestAddDriverGroup:
 
     driver_group = []
 
+    @pytest.mark.regression
+    @allure.title("Check Add Driver Group")
     def test_add_driver_group(self, driver):
         login = LoginPage(driver, Links.login)
         login.open()
@@ -20,6 +25,8 @@ class TestAddDriverGroup:
         print(f'The driver group {driver_group_name} was created')
         assert result == f'Driver Group with #{driver_group_id} was created .', 'The Driver group was not created'
 
+    @pytest.mark.regression
+    @allure.title("Check Deactivate Driver Group")
     def test_deactivate_driver_group(self, driver):
         driver_group = self.driver_group
         driver.refresh()
@@ -29,6 +36,8 @@ class TestAddDriverGroup:
         print(f'The driver group {inactive_driver_group} is now {status}, expected result - Inactive .')
         assert status == 'Inactive', 'The Driver Group was not deactivated'
 
+
+    @allure.title("Check Activate Driver Group")
     def test_activate_driver_group(self, driver):
         driver_group = self.driver_group
         driver.refresh()

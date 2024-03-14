@@ -8,7 +8,6 @@ class AddDriverGroupPageLocators:
     OWNERS_USERNAME = (By.CSS_SELECTOR, 'input[name="owner_username"]')
     OWNERS_USERNAME_SELECT = (By.CSS_SELECTOR, 'ul[class="dropdown-menu ng-isolate-scope"]')
     SAVE_BUTTON = (By.CSS_SELECTOR, 'button[class="btn btn-lg mr5 ml5 btn-success ng-scope"]')
-
     RESULT = (By.CSS_SELECTOR, 'div[class="ui-notification ng-scope info clickable"]')
 
 
