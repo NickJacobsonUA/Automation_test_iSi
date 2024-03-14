@@ -1,12 +1,17 @@
 from pages.vehicles_page import AddVehiclePage
 from conftest import driver
 from pages.login_page import LoginPage
-from creds_and_links import Links
+from links import Links
+import allure
+import pytest
 
 
+@allure.feature("Add Vehicle")
 class TestAddVehicle:
 
-    def test_add_new_vehicle(self, driver):
+    @pytest.mark.regression
+    @allure.title("Check Add AM Vehicle")
+    def test_add_am_vehicle(self, driver):
         login = LoginPage(driver, Links.login)
         login.open()
         login.fill_login_form()
