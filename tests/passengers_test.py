@@ -1,13 +1,18 @@
 from pages.passengers_page import AddPassengerPage, PassengerListPage
 from conftest import driver
 from pages.login_page import LoginPage
-from creds_and_links import Links
+from links import Links
+import allure
+import pytest
 
 
+@allure.feature("Add Passenger")
 class TestPassenger:
 
     passenger_full_name = []
 
+    @pytest.mark.regression
+    @allure.title("Check Add Passenger")
     def test_add_new_passenger(self, driver):
         login = LoginPage(driver, Links.login)
         login.open()
@@ -20,6 +25,8 @@ class TestPassenger:
         print(result)
         assert result == f'Passenger "{passenger}" was created .', 'The passenger was not created'
 
+    @pytest.mark.regression
+    @allure.title("Check Deactivate Passenger")
     def test_deactivate_new_passenger(self, driver):
         full_name = self.passenger_full_name
         driver.refresh()
@@ -29,6 +36,7 @@ class TestPassenger:
         print(f'{passenger} is now {status}, expected result Inactive')
         assert status == 'Inactive', 'Passenger is Active'
 
+    @allure.title("Check Activate Passenger")
     def test_activate_new_passenger(self, driver):
         full_name = self.passenger_full_name
         driver.refresh()
