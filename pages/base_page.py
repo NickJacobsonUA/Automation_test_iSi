@@ -8,18 +8,16 @@ class BasePage:
         self.driver = driver
         self.url = url
 
-    # Далее нужно открыть конкретный url. Для этого нужно создать функцию open
-
     def open(self):
         self.driver.get(self.url)
 
-    def element_is_visible(self, locator, timeout=5):
+    def element_is_visible(self, locator, timeout=10):
         return wait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
 
     def elements_are_visible(self, locator, timeout=5):
         return wait(self.driver, timeout).until(EC.visibility_of_all_elements_located(locator))
 
-    def element_is_present(self, locator, timeout=5):
+    def element_is_present(self, locator, timeout=10):
         return wait(self.driver, timeout).until(EC.presence_of_element_located(locator))  # поиск по ДОМ дереву
 
     def elements_are_present(self, locator, timeout=5):
@@ -53,18 +51,3 @@ class BasePage:
         action = ActionChains(self.driver)
         action.move_to_element(element)
         action.perform()
-
-    # def click_obj(self, click_elem: str, message: str = 'TimeoutException'):
-    #     """Клик по видимому обьекту страницы
-    #
-    #     click_elem = str / например:  ('xpath', click_elem)
-    #
-    #     """
-    #     try:
-    #         my_obj = self.wite.until(EC.visibility_of_element_located(click_elem))
-    #
-    #         ActionChains(self.driver).click(my_obj).perform()
-    #
-    #
-    #     except TimeoutException:
-    #         self.error_info(message)

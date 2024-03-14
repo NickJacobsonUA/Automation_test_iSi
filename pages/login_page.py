@@ -1,6 +1,6 @@
 from locators.login_page_locators import LoginPageLocators
 from pages.base_page import BasePage
-from creds_and_links import Credentials
+from credentials import Credentials
 
 
 class LoginPage(BasePage):

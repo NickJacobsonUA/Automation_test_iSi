@@ -8,6 +8,4 @@ class Links:
     payers = 'https://test9.isi-technology.com/#!/accounts'
 
 
-class Credentials:
-    username = 'nick_test9'
-    passwords = '000000'
+
